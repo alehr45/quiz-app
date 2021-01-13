@@ -56,9 +56,17 @@ opacity: 0.7;
     opacity: 1;
   }
 
+
+.quizbox {
+
+    width: 40%;
+
+}
+
+
 .choice-box {
 display: flex;
-width: 500px;
+
 border-radius: 25px;
 margin-bottom: 10px;
 background-color: rgb(170, 170, 170);

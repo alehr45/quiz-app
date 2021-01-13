@@ -11,7 +11,7 @@ var allQuestions = [];
 
 
 //Array holding all possible questions and answers
-let questions = [
+let quizQuestions = [
 
 {
 question: "What does CSS stand for?",
@@ -88,21 +88,22 @@ choice4: "if (i <> 5)",
 answer: 1
 }]
 
-
+//Function that starts the game and choses random question from array
 function startGame() {
 
 questionCounter = 0;
 score = 0;
-allQuestions = [...questions];
-console.log(allQuestions)
+allQuestions = [...quizQuestions];
+console.log(allQuestions);
+pullRandQuestion(); 
+};
 
+function pullRandQuestion() {
+
+questionCounter++;
+var randQuestion = Math.floor(Math.random() * allQuestions.length);
+currentQuestion = allQuestions[randQuestion];
+question.innerText = currentQuestion.question;
 }
 
-
-
-
-
-questionData = 0;
-score = 0;
-
-startGame()
+startGame();
