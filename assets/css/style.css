@@ -69,6 +69,7 @@ width: 40%;
 
 
 .choice-box {
+    width: 100%;
 
 display: flex;
 border-radius: 25px;
@@ -91,6 +92,8 @@ border-radius: 25px;
 }
 
 .choice-text {
+    border-radius: 25px;
+    width: 100%;
 background-color :rgb(170, 170, 170);
 padding: 18px;
 text-align:left;
