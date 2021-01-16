@@ -21,6 +21,7 @@ var beginTimer = function () {
         timer--;
         timerEl.textContent = "Time:" + timer;
         if (timer === 0) {
+
             endtimer();
         }
     }
@@ -137,7 +138,7 @@ function pullRandQuestion() {
     choices.forEach(choice => {
 
         var number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number];
+        choice.innerText = currentQuestion["choice" + number];
     });
 
     codeAnswers = true;
@@ -152,15 +153,17 @@ choices.forEach(choice => {
         var userChoice = button.target;
         var userAnswer = userChoice.dataset["number"];
         //Creates a class out of the correct or incorrect answers
-        if (userAnswer == currentQuestion.answer) {
-            createClass = "right answer";
-        }
-        if (userAnswer !== currentQuestion.answer) {
-            createClass = "wrong answer";
-        }
-        if (createClass === "wrong answer") {
-            addScore();
 
+        var createClassRight = "correct";
+        if (userAnswer == currentQuestion.answer) {
+            createClassRight = "correct";
+
+
+            var createClassWrong = "incorrect";
+            if (userAnswer !== currentQuestion.answer) {
+                createClassWrong = "incorrect";
+            }
+            addScore();
         }
 
 
@@ -169,20 +172,21 @@ choices.forEach(choice => {
 
 
 
-        // if ((userAnswer == currentQuestion.answer) !== true) {
-        //     timer = timer - 10;
-        //     return (timer);
-        // }
+        if (createClassWrong !== "incorrect") {
+            timer = timer - 10;
+            return (timer);
+        }
 
     });
 });
 
-var addScore = function() {
-    score = score + 10
-    scoreTextEl.textContent = "Score: " +  score;
-    };
+var addScore = function () {
+    score = score + 10;
+    scoreTextEl.textContent = "Score: " + score;
+
+
+};
 
 
 startGame();
 beginTimer();
-addScore();
