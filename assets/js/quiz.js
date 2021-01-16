@@ -19,17 +19,19 @@ var beginTimer = function () {
 
     var countdown = function () {
         timer--;
-        timerEl.textContent = "Time:" + timer;
-        if (timer === 0) {
-
-            endtimer();
+        timerEl.textContent = "Time: " + timer;
+        if (timer <= 0) {
+            
+            return window.location.assign("./highscores.html")
+            
         }
+        
     }
 
     var timeInterval = setInterval(countdown, 1000);
-    var endtimer = function () {
-        clearInterval(timeInterval);
-    }
+    // var endtimer = function () {
+    //     clearInterval(timeInterval);
+    // }
 
 
 }
@@ -144,7 +146,7 @@ function pullRandQuestion() {
     codeAnswers = true;
 };
 
-//Logs choice "number" with click of button
+//Function that decides which answer is correct or incorrect 
 choices.forEach(choice => {
     choice.addEventListener("click", button => {
         if (!codeAnswers) return;
@@ -152,8 +154,8 @@ choices.forEach(choice => {
         codeAnswers = true;
         var userChoice = button.target;
         var userAnswer = userChoice.dataset["number"];
+        
         //Creates a class out of the correct or incorrect answers
-
         var createClassRight = "correct";
         if (userAnswer == currentQuestion.answer) {
             createClassRight = "correct";
@@ -165,13 +167,7 @@ choices.forEach(choice => {
             }
             addScore();
         }
-
-
-
         pullRandQuestion();
-
-
-
         if (createClassWrong !== "incorrect") {
             timer = timer - 10;
             return (timer);
@@ -179,7 +175,7 @@ choices.forEach(choice => {
 
     });
 });
-
+// Function that adds to score with each incorrect answer
 var addScore = function () {
     score = score + 10;
     scoreTextEl.textContent = "Score: " + score;
