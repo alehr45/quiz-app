@@ -28,7 +28,7 @@ var beginTimer = function () {
         
     }
 
-    var timeInterval = setInterval(countdown, 1000);
+     setInterval(countdown, 1000);
     // var endtimer = function () {
     //     clearInterval(timeInterval);
     // }
@@ -132,7 +132,7 @@ function startGame() {
 //Choses a random question and choices from array
 function pullRandQuestion() {
 
-    questionCount++;
+    
     var randQuestion = Math.floor(Math.random() * allQuestions.length);
     currentQuestion = allQuestions[randQuestion];
     question.innerText = currentQuestion.question;
@@ -175,7 +175,7 @@ choices.forEach(choice => {
 
     });
 });
-// Function that adds to score with each incorrect answer
+// Function that adds to score with each correct answer
 var addScore = function () {
     score = score + 10;
     scoreTextEl.textContent = "Score: " + score;

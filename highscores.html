@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Scores Page</title>
 </head>
+
 <body>
     <div class="container">
         <div id="home" class="quizbox">
             <h1>Game Over!</h1>
-
-<h1 id=finalScore>0</h1>
-
-
-
-<form> <input type="text" id="username" class="initials" placeholder="username";>
-<button type="save"
-
-
-
-
-
-
-
+        <h1 id=finalScore>0</h1>
             <h2>High Scores</h2>
-            
-           <a class ="btn" href="index.html">Home</a>
-            <a class ="btn" href="quiz.html">Try Again</a>
-            
-        
-     </div>
+            <form> 
+                <input type="text" id="username" class="username" placeholder="username">
+                <a class="btn" type="submit" id="saveScoreBtn" onclick="saveHighSCore()">Submit High Score!
+                <a class="btn" href="index.html">Home</a>
+                <a class="btn" href="quiz.html">Try Again</a> 
+            </form>
+
+
+        </div>
     </div>
-    <script src ="highscores.js"></script>
+    <script src="highscores.js"></script>
 </body>
+
 </html>
