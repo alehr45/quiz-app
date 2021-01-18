@@ -12,19 +12,24 @@
     <div class="container">
         <div id="home" class="quizbox">
             <h1>Game Over!</h1>
-        <h1 id=userScore>0</h1>
+            <h1 id=userScore>0</h1>
             <h2>High Scores</h2>
-            <form> 
-                <input type="text" id="username" class="username" placeholder="username">
-                <a class="btn" type="submit" id="saveScoreBtn" onclick="saveHighSCore()">Submit High Score!
-                <a class="btn" href="index.html">Home</a>
-                <a class="btn" href="quiz.html">Try Again</a> 
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            <form>
+                <input type="text" id="username" class="username" name="name" placeholder="Enter Your Name Here!"></input>
+                <a class="btn" type="submit" id="saveScoreBtn" onclick= "saveData()">Submit High Score!</a>
+                    <a class="btn" href="index.html">Home</a>
+                    <a class="btn" href="quiz.html">Try Again</a>
             </form>
 
 
         </div>
     </div>
-    <script src="highscores.js"></script>
+    <script src="./assets/js/highscores.js"></script>
 </body>
 
 </html>
