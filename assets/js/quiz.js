@@ -1,6 +1,3 @@
-
-
-//Variables and arrays for storing and gathering user information
 var question = document.getElementById("question");
 var scoreTextEl = document.getElementById("score");
 var choices = Array.from(document.getElementsByClassName("choice-text"))
@@ -29,9 +26,6 @@ var beginTimer = function () {
     }
 
      setInterval(countdown, 1000);
-    // var endtimer = function () {
-    //     clearInterval(timeInterval);
-    // }
 
 
 }
@@ -122,6 +116,7 @@ let quizQuestions = [
 //Function that starts the game and starts functions
 function startGame() {
 
+
     questionCount = 0;
     score = 0;
     allQuestions = [...quizQuestions];
@@ -132,7 +127,7 @@ function startGame() {
 //Choses a random question and choices from array
 function pullRandQuestion() {
 
-    
+    localStorage.setItem("lastScore" , score);
     var randQuestion = Math.floor(Math.random() * allQuestions.length);
     currentQuestion = allQuestions[randQuestion];
     question.innerText = currentQuestion.question;

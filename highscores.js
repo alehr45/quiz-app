@@ -1,6 +1,7 @@
 var username = document.getElementById("username");
 var saveScoreBtn = document.getElementById("saveScoreBtn");
- 
+var lastScore = localStorage.getItem("lastScore");
+userScore.innerText = lastScore;
 
 
 
@@ -11,7 +12,9 @@ var saveScoreBtn = document.getElementById("saveScoreBtn");
 
 saveHighScore = function() {
 
-console.log("clicked the save button");
+
+
+console.log("Hello world");
 
 
 
